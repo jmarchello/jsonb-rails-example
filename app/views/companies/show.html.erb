@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<div><b>Name: </b> <%= @company.name %></div>
+<div><b>Industry: </b> <%= @company.industry %></div>
+
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>

@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2020_02_19_061641) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name", null: false
-    t.string "industry", null: false
-    t.jsonb "addresses", null: false
+    t.string "industry"
+    t.jsonb "addresses"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

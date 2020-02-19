@@ -1,0 +1,4 @@
+- [ ] Manually create a model for Address
+- [ ] Add form fields and display code for our addresses
+- [ ] Find an easier way to create models for Addresses
+- [ ] Improve out forms and display code
