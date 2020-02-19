@@ -3,5 +3,8 @@
 <div><b>Name: </b> <%= @company.name %></div>
 <div><b>Industry: </b> <%= @company.industry %></div>
 
+<h3>Addresses:</h3>
+<%= render 'address_form', company: @company %>
+
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>

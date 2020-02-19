@@ -1,0 +1,69 @@
+<%= form_with(model: company, local: true) do |form| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+        <% company.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% company.addresses.each do |address| %>
+    <%= label_tag 'Line 1' %>
+    <%= text_field_tag 'company[addresses][][line1]', address.line1 %>
+
+    <br/>
+
+    <%= label_tag 'Line 2' %>
+    <%= text_field_tag 'company[addresses][][line2]', address.line2 %>
+
+    <br/>
+
+    <%= label_tag 'City' %>
+    <%= text_field_tag 'company[addresses][][city]', address.city %>
+
+    <br/>
+
+    <%= label_tag 'State' %>
+    <%= text_field_tag 'company[addresses][][state]', address.state %>
+
+    <br/>
+
+    <%= label_tag 'Zip' %>
+    <%= text_field_tag 'company[addresses][][zip]', address.zip %>
+
+    <hr/>
+  <% end %>
+
+  <h3> New Address </h3>
+  <%= label_tag 'Line 1' %>
+  <%= text_field_tag 'company[addresses][][line1]' %>
+
+  <br/>
+
+  <%= label_tag 'Line 2' %>
+  <%= text_field_tag 'company[addresses][][line2]' %>
+
+  <br/>
+
+  <%= label_tag 'City' %>
+  <%= text_field_tag 'company[addresses][][city]' %>
+
+  <br/>
+
+  <%= label_tag 'State' %>
+  <%= text_field_tag 'company[addresses][][state]' %>
+
+  <br/>
+
+  <%= label_tag 'Zip' %>
+  <%= text_field_tag 'company[addresses][][zip]' %>
+
+  <br/>
+  <div class="actions">
+    <%= form.submit "Save" %>
+  </div>
+<% end %>
